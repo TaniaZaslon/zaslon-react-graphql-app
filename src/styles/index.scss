@@ -1,0 +1,18 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800&display=swap');
+
+@import './mediaQuery.scss';
+@import './variables.scss';
+@import './types.scss';
+
+body{
+  font-family: $base-font;
+  font-size: $base-font-size;
+  font-weight: 400;
+  line-height: 25px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
+  color: $black-lighter;
+}
