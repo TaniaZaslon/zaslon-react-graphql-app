@@ -16,3 +16,6 @@ body{
   -ms-text-size-adjust: 100%;
   color: $black-lighter;
 }
+
+@import './main.scss';
+@import './components/userList.scss';
