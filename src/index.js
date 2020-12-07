@@ -27,7 +27,7 @@ const client = new ApolloClient({
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <App />
+    <App data-aos-easing="ease-out-back" data-aos-duration="1000" data-aos-delay="0" />
   </ApolloProvider>,
   document.getElementById('root')
 );
