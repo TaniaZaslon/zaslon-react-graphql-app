@@ -3,8 +3,8 @@
 Implemented serching GitHub Users and their Repositories/Issues. 
 
 ## Used Scripts
-graphql
-@apollo/client
+*graphql
+*@apollo/client
 
 ## Visualization
 react-bootsrap
