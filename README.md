@@ -3,16 +3,16 @@
 Implemented serching GitHub Users and their Repositories/Issues. 
 
 ## Used Scripts
-*graphql
+graphql
 
--@apollo/client
+@apollo/client
 
 
 ## Visualization
--react-bootsrap
+react-bootsrap
 
--aos animation
+aos animation
 
--fontawesome
+fontawesome
 
--node-sass
+node-sass
