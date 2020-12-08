@@ -3,7 +3,7 @@
 Implemented serching GitHub Users and their Repositories/Issues. 
 
 ## Used Scripts
--graphql
+*graphql
 
 -@apollo/client
 
