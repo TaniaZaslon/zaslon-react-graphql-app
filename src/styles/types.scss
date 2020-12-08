@@ -12,9 +12,9 @@ body, html {
 a {
 color: $black;
 transition: .3s all;
-&:hover{
-  color: $primary-color;
-}
+  &:hover{
+    color: $primary-color;
+  }
 }
 
 a,

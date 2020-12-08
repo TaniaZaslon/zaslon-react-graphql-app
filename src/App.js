@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { Container } from "react-bootstrap";
 import TopNavbar from "./layout/TopNavbar";
+import Footer from "./layout/Footer";
 import SearchUsers from "./components/SearchUsers";
 import UsersList from "./components/UsersList";
 import RepositoriesList from "./components/RepositoriesList";
@@ -12,8 +13,9 @@ import { GET_USERS, GET_REPOSITORIES } from "./utils/queries";
 const App = () => {
   const [userForSearch, setUserForSearch] = useState("");
   const [repoOwner, setRepoOwner] = useState("");
-  const [getUsers, { loading: loadingUsers, data: users }] = useLazyQuery(GET_USERS, { variables: { user: userForSearch } });
-  let [getRepositories,{ loading: loadingRepo, data: repos }] = useLazyQuery(GET_REPOSITORIES, { variables: { owner: repoOwner } });
+  const [getUsers, { data: users }] = useLazyQuery(GET_USERS, { variables: { user: userForSearch } });
+  let [getRepositories,{ data: repos }] = useLazyQuery(GET_REPOSITORIES, { variables: { owner: repoOwner } });
+  // let [getIssues,{ data: issues }] = useLazyQuery(GET_ISSUES, { variables: { owner: repo } });
 
   AOS.init();
 
@@ -27,6 +29,11 @@ const App = () => {
   const handlerSearchRepo = (owner) => {
     setRepoOwner(owner);
     getRepositories();
+  };
+
+  const handlerSearchIssue = (repo) => {
+    // setRepoOwner(owner);
+    // getRepositories();
   };
 
   return (
@@ -44,11 +51,12 @@ const App = () => {
         
         {repos && (
           <section className="repo-section">
-            <h2 className="mb-3">Repositories</h2>{console.log(repoOwner)}
+            <h2 className="mb-3">Repositories</h2>
             <RepositoriesList repos={repos.user.repositories.edges} owner={repoOwner} />
           </section>
         )}
       </Container>
+      <Footer />
     </>
   );
 };

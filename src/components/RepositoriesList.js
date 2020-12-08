@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Jumbotron from "react-bootstrap/Jumbotron";
 
-const RepositoriesList = ({ repos, owner }) => {
+const RepositoriesList = ({ repos, owner, handler }) => {
   return (
     <Container className="repos">
       {repos.length === 0 && (
@@ -13,13 +13,13 @@ const RepositoriesList = ({ repos, owner }) => {
               It seems [<b>{owner}</b>] doesn't
               have repos yet.
             </p>
-            <p>Try another one.</p>
+            <p>Try another user.</p>
           </Container>
         </Jumbotron>
       )}
       {repos.map((item, index) => {
         return (
-          <Row className="repos-row justify-content-between" key={index}>
+          <Row className="repos-row justify-content-between" key={index} onClick={(e) => {e.preventDefault(); handler(item.node.name)}}>
             <Col xs={3} className="repos-cell">
               {item.node.name}
             </Col>
