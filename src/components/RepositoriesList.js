@@ -24,7 +24,7 @@ const RepositoriesList = ({ repos, owner, handler }) => {
               {item.node.name}
             </Col>
             <Col xs={3} className="repos-cell text-center">
-              {item.node.stargazerCount} start / {item.node.watchers.totalCount}{" "}
+              {item.node.stargazerCount} start / {item.node.watchers.totalCount}{' '}
               watching
             </Col>
           </Row>
